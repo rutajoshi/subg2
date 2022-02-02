@@ -1,4 +1,2 @@
-build/
-generated/
 node_modules/
 yarn.lock
