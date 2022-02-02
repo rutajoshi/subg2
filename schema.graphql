@@ -1,5 +1,15 @@
-type ExampleEntity @entity {
+type User @entity {
   id: ID!
-  count: BigInt!
-  tokenImplementation: Bytes! # address
+  tokens: [CreatorToken!]! @derivedFrom(field: "user")
+}
+
+type CreatorToken @entity {
+  id: ID!
+  tokenAddress: Bytes!
+  creator: Bytes!
+  name: String
+  symbol: String
+  imageUrl: String
+  maxSupply: BigInt
+  user: User!
 }
