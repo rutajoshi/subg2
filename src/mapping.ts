@@ -77,7 +77,8 @@ export function handleTokenCreated(event: TokenCreated): void {
   token.user = user.id
 
   token.maxSupply = event.params.maxTokenSupply
+  // user.tokens.push(token.id)
+
   token.save()
-  user.tokens.push(token.id)
-  user.save()
+  // user.save()
 }
